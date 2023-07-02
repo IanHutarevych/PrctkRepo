@@ -3,5 +3,20 @@
     "name": "ivan",
     "phoneNumber": "0965586218",
     "email": "vasdqweddf12@gmail.com"
+  },
+  "Maks": {
+    "name": "Maks",
+    "phoneNumber": "0986675341",
+    "email": "makisi48@gmail.com"
+  },
+  "Ania": {
+    "name": "Ania",
+    "phoneNumber": "",
+    "email": ""
+  },
+  "Edgar": {
+    "name": "Edgar",
+    "phoneNumber": "0687767534",
+    "email": "vatamanitsa@gmail.com"
   }
 }

@@ -41,9 +41,20 @@ public class ContactBook {
     }
 
     public void showAllContacts() {
-        System.out.println("All Contacts:");
-        for (Contact contact : contacts.values()) {
+        System.out.println("All Contacts: \n");
+        List<Contact> sortedContacts = new ArrayList<>(contacts.values());
+        sortedContacts.sort(Comparator.comparing(Contact::getName));
+        for (Contact contact : sortedContacts) {
             System.out.println(contact);
+        }
+    }
+    public void searchContact(String name) {
+        Contact contact = contacts.get(name);
+        if (contact != null) {
+            System.out.println("Contact found:");
+            System.out.println(contact);
+        } else {
+            System.out.println("Contact not found.");
         }
     }
 
@@ -80,7 +91,7 @@ public class ContactBook {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            System.out.println("Enter command (add, delete, update, showAll, exit):");
+            System.out.println("Enter command (add, delete, update, showAll, search, exit):");
             String command = scanner.nextLine();
 
             if (command.equals("add")) {
@@ -107,7 +118,11 @@ public class ContactBook {
                 contactBook.showAllContacts();
             } else if (command.equals("exit")) {
                 contactBook.exit();
-            } else {
+            } else if (command.equals("search")) {
+            System.out.println("Enter contact name:");
+            String name = scanner.nextLine();
+            contactBook.searchContact(name);
+        }  else {
                 System.out.println("Invalid command. Please try again.");
             }
         }
